@@ -1,0 +1,280 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+:root {
+  --clr-black: #131313;
+  --clr-primary: #282828;
+  --clr-secondary: #adafae;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: "Cairo", sans-serif;
+  background-color: var(--clr-black);
+}
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-width: 350px;
+  height: 100%;
+  background-color: var(--clr-black);
+  color: var(--clr-secondary);
+ 
+}
+header {
+  position: relative;
+  height: 15%;
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 2px solid var(--clr-primary);
+}
+a {
+  text-decoration: none;
+  color: var(--clr-secondary);
+}
+.btn {
+  padding: 0.5rem;
+  background: var(--clr-primary);
+  border-radius: 40px;
+  width: 100%;
+  text-align: center;
+}
+.btn:hover,
+.btn:focus {
+  background: var(--clr-secondary);
+  color: var(--clr-primary);
+  transition: all 0.3s ease-in-out;
+  font-weight: 700;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 2.2rem;
+}
+h2 {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 2.2rem;
+}
+header img {
+  position: absolute;
+  top: 25%;
+  left: 5%;
+  width: 50px;
+  border-radius: 50%;
+  border: 1px solid var(--clr-secondary);
+}
+
+.projects {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--clr-black);
+}
+main{
+  background-color: var(--clr-black);
+  padding: 2rem;
+}
+main h2 {
+  text-align: center;
+  letter-spacing: 0.25rem;
+  border-bottom: 1px solid var(--clr-primary);
+  padding-bottom:1rem;
+ 
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.project + .project {
+  border-top: 1px solid var(--clr-primary);
+}
+.btn + .btn {
+  margin-top: 1rem;
+}
+main img {
+  width: 90%;
+  margin-bottom: 1.3rem;
+}
+#project2 img{
+  width: 39%;
+}
+h3 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.btn-group{
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+}
+
+.side1 {
+  display: none;
+  margin-right: 0.5rem;
+}
+
+.side2 {
+  display: none;
+  margin-right: 0.5rem;
+}
+
+footer {
+  position: relative;
+  height: 70px;
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--clr-black);
+  color: var(--clr-secondary);
+  border-top: 2px solid var(--clr-primary);
+  border-bottom: 2px solid var(--clr-primary);
+}
+
+@media screen and (min-width: 500px){
+  main {
+   
+    padding: 3rem;
+   
+  }
+  header {
+    flex-direction: row;
+    justify-content: center;
+    
+    
+  }
+  header h1{
+    margin: 1rem;
+  }
+  header img{
+    position: relative;
+    width: 3rem;
+    transform: translateY(5px);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    display: grid;
+    grid-template-areas:
+      "header header header"
+      "side1 content side2"
+      "footer footer footer";
+    grid-template-columns: 15% 1fr 15%;
+    grid-template-rows: 100px 1fr 70px;
+   
+  }
+  header {
+    grid-area: header;
+    height: 100%;
+    padding: 1rem;
+
+  }
+  h2{
+    margin: 2rem;
+    font-size: 5rem;
+  }
+
+  main{
+
+    padding: 0rem;
+    grid-area: content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100%;
+   
+  }
+ 
+
+  .projects {
+   display: grid;
+   grid-template-rows: repeat(3,1fr);
+   grid-template-columns: repeat(2,1fr);
+  }
+  .project {
+    display: flex;
+    vertical-align: bottom;
+    padding: 1rem;
+    margin-bottom: 0rem;
+  }
+  
+  .project + .project {
+    border-top: none;
+  }
+  h2{
+    font-size: 3rem;
+  }
+  h3{
+    font-size: 2rem;
+  line-height: 2.3rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  }
+
+
+
+  .side1 {
+    display: flex;
+    grid-area: side1;
+   background-color: var(--clr-black);
+   width: 100%;
+   height: 100%;
+  }
+
+  .side2 {
+    display: flex;
+    grid-area: side2;
+    background-color: var(--clr-black);
+    width: 100%;
+   height: 100%;
+  }
+
+}
+
+@media screen and (min-width: 1112px) {
+
+  .projects {
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+    grid-template-columns: repeat(3,1fr);
+   }
+   .btn-group{
+    
+     flex-direction: row;
+   }
+   .btn + .btn {
+    margin-top: 0rem;
+    margin-left: 1rem;
+  }
+   footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    
+   }
+}
